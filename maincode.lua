@@ -76,7 +76,6 @@ local function createInputBox(name, position, placeholderText)
     inputBox.PlaceholderColor3 = Color3.fromRGB(255, 182, 193) -- Light Pink Placeholder Text
     inputBox.TextColor3 = Color3.fromRGB(255, 105, 180) -- Dark Pink Text Color
     inputBox.TextScaled = true
-
     local inputBoxUICorner = Instance.new("UICorner")
     inputBoxUICorner.CornerRadius = UDim.new(0, 10)
     inputBoxUICorner.Parent = inputBox
