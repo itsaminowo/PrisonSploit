@@ -30,7 +30,7 @@ MainFrame.CanvasSize = UDim2.new(0, 0, 2, 0) -- Adjusted canvas size to fit cont
 MainFrame.ScrollBarThickness = 4
 -- UICorner for MainFrame
 local mainFrameCorner = Instance.new("UICorner")
-mainFrameCorner.CornerRadius = UDim.new(0, 15)
+mainFrameCorner.CornerRadius = UDim.new(0, 0)
 mainFrameCorner.Parent = MainFrame
 
 -- Title Label Properties
@@ -59,7 +59,7 @@ local function createButton(name, position, text, callback)
     button.TextColor3 = Color3.fromRGB(255, 255, 255) -- White text color
     button.TextScaled = true
     local buttonUICorner = Instance.new("UICorner")
-    buttonUICorner.CornerRadius = UDim.new(0, 10)
+    buttonUICorner.CornerRadius = UDim.new(0, 0)
     buttonUICorner.Parent = button
     button.MouseButton1Click:Connect(callback)
     return button
@@ -78,7 +78,7 @@ local function createInputBox(name, position, placeholderText)
     inputBox.TextColor3 = Color3.fromRGB(255, 105, 180) -- Dark Pink Text Color
     inputBox.TextScaled = true
     local inputBoxUICorner = Instance.new("UICorner")
-    inputBoxUICorner.CornerRadius = UDim.new(0, 10)
+    inputBoxUICorner.CornerRadius = UDim.new(0, 0)
     inputBoxUICorner.Parent = inputBox
     return inputBox
 end
