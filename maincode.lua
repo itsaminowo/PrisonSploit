@@ -39,6 +39,7 @@ TitleLabel.BorderSizePixel = 2
 TitleLabel.Size = UDim2.new(1, 0, 0, 41)
 TitleLabel.Position = UDim2.new(0, 0, 0, 0)
 TitleLabel.Text = "PrisonSploit :3"
+TitleLabel.Font = Enum.Font.SourceSans
 TitleLabel.TextColor3 = Color3.fromRGB(255, 182, 193) -- Light Pink 
 TitleLabel.TextScaled = true
 TitleLabel.TextStrokeColor3 = Color3.fromRGB(255, 255, 255) -- White text stroke
@@ -55,6 +56,8 @@ local function createButton(name, position, text, callback)
     button.Size = UDim2.new(0, 280, 0, 30)
     button.Position = position
     button.Text = text
+    button.Font = Enum.Font.SourceSans
+    button.FontSize = Enum.FontSize.Size28
     button.TextColor3 = Color3.fromRGB(255, 255, 255) -- White text color
     button.TextScaled = true
    
@@ -71,6 +74,8 @@ local function createInputBox(name, position, placeholderText)
     inputBox.BorderColor3 = Color3.fromRGB(255, 182, 193) -- Light Pink
     inputBox.BorderSizePixel = 2
     inputBox.Size = UDim2.new(0, 280, 0, 30)
+    inputBox.Font = Enum.Font.SourceSans
+    inputBox.FontSize = Enum.FontSize.Size28
     inputBox.Position = position
     inputBox.PlaceholderText = placeholderText
     inputBox.PlaceholderColor3 = Color3.fromRGB(255, 182, 193) -- Light Pink Placeholder Text
