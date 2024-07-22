@@ -5,8 +5,8 @@ local UICorner = Instance.new("UICorner")
 local TitleLabel = Instance.new("TextLabel")
 local KillAuraButton = Instance.new("TextButton")
 local DeactivateKillAuraButton = Instance.new("TextButton")
-local SpeedSlider = Instance.new("TextBox")
-local JumpPowerSlider = Instance.new("TextBox")
+local SpeedSlider = Instance.new("Speed")
+local JumpPowerSlider = Instance.new("Jump Power")
 local CloseButton = Instance.new("TextButton")
 local CriminalsButton = Instance.new("TextButton")
 local GuardsButton = Instance.new("TextButton")
@@ -66,13 +66,13 @@ end
 
 -- Input Box Properties
 local function createInputBox(name, position, placeholderText)
-    local inputBox = Instance.new("TextBox")
+    local inputBox = Instance.new("Speed")
     inputBox.Name = name
     inputBox.Parent = MainFrame
     inputBox.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
     inputBox.Size = UDim2.new(0, 280, 0, 30)
     inputBox.Position = position
-    inputBox.PlaceholderText = "Speed Value"
+    inputBox.PlaceholderText = placeholderText
     inputBox.PlaceholderColor3 = Color3.fromRGB(255, 182, 193) -- Light Pink Placeholder Text
     inputBox.TextColor3 = Color3.fromRGB(255, 105, 180) -- Dark Pink Text Color
     inputBox.TextScaled = true
