@@ -20,15 +20,14 @@ ScreenGui.Parent = game.CoreGui
 
 MainFrame.Name = "MainFrame"
 MainFrame.Parent = ScreenGui
-MainFrame.BackgroundColor3 = Color3.fromRGB(255, 182, 193) -- Light Pink
+MainFrame.BackgroundColor3 = Color3.fromRGB(255, 105, 180) -- Dark Pink
 MainFrame.BackgroundTransparency = 0.5 -- Transparency level
 MainFrame.Position = UDim2.new(0.5, -160, 0.5, -300) -- Centered position
 MainFrame.Size = UDim2.new(0, 320, 0, 600) -- Increased size to accommodate new buttons
 MainFrame.BorderSizePixel = 2
 MainFrame.BorderColor3 = Color3.fromRGB(255, 182, 193) -- Light Pink Border
 MainFrame.CanvasSize = UDim2.new(0, 0, 2, 0) -- Adjusted canvas size to fit content
-MainFrame.ScrollBarThickness = 8
-
+MainFrame.ScrollBarThickness = 4
 -- UICorner for MainFrame
 local mainFrameCorner = Instance.new("UICorner")
 mainFrameCorner.CornerRadius = UDim.new(0, 15)
@@ -37,11 +36,13 @@ mainFrameCorner.Parent = MainFrame
 -- Title Label Properties
 TitleLabel.Name = "TitleLabel"
 TitleLabel.Parent = MainFrame
-TitleLabel.BackgroundTransparency = 1
-TitleLabel.Size = UDim2.new(1, 0, 0, 40)
+TitleLabel.BackgroundColor3 = Color3.fromRGB(255, 105, 180) -- Dark Pink
+TitleLabel.BackgroundTransparency = 0
+TitleLabel.BorderColor3 = Color3.fromRGB(255, 182, 193) -- Light Pink 
+TitleLabel.Size = UDim2.new(1, 0, 0, 41)
 TitleLabel.Position = UDim2.new(0, 0, 0, 0)
-TitleLabel.Text = "PrisonSploit v0.1.1"
-TitleLabel.TextColor3 = Color3.fromRGB(255, 105, 180) -- Dark Pink
+TitleLabel.Text = "PrisonSploit :3"
+TitleLabel.TextColor3 = Color3.fromRGB(255, 182, 193) -- Light Pink 
 TitleLabel.TextScaled = true
 TitleLabel.TextStrokeColor3 = Color3.fromRGB(255, 255, 255) -- White text stroke
 TitleLabel.TextStrokeTransparency = 0.5
@@ -295,22 +296,6 @@ NoclipButton = createButton("NoclipButton", UDim2.new(0.5, -buttonWidth/2, 0, ve
     end)
 end)
 
--- Close Button
-CloseButton.Name = "CloseButton"
-CloseButton.Parent = MainFrame
-CloseButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255) -- White
-CloseButton.Size = UDim2.new(0, 80, 0, 40)
-CloseButton.Position = UDim2.new(0.5, -40, 1, -50)
-CloseButton.Text = "ⓧ"
-CloseButton.TextColor3 = Color3.fromRGB(255, 105, 180) -- Dark Pink
-CloseButton.TextScaled = true
-local closeButtonUICorner = Instance.new("UICorner")
-closeButtonUICorner.CornerRadius = UDim.new(0, 20)
-closeButtonUICorner.Parent = CloseButton
-
--- Adjust Canvas Size
-MainFrame.CanvasSize = UDim2.new(0, 0, 0, verticalPosition + 8*(buttonHeight + buttonSpacing) + 50)
-
 -- Connect Slider and Button functionality
 SpeedSlider.FocusLost:Connect(function()
     local speed = tonumber(SpeedSlider.Text) or 0
@@ -328,8 +313,58 @@ JumpPowerSlider.FocusLost:Connect(function()
     end
 end)
 
--- Close GUI
-CloseButton.MouseButton1Click:Connect(function() ScreenGui:Destroy() end)
+
+-- Close Button Properties
+CloseButton.Name = "CloseButton"
+CloseButton.Parent = MainFrame
+CloseButton.BackgroundColor3 = Color3.fromRGB(255, 255, 2555) -- White
+CloseButton.Size = UDim2.new(0, 30, 0, 30)
+CloseButton.Position = UDim2.new(1, -40, 0, 0)
+CloseButton.Text = "ⓧ"
+CloseButton.TextColor3 = Color3.fromRGB(255, 105, 180) -- Dark pink text color
+CloseButton.TextScaled = true
+local closeButtonUICorner = Instance.new("UICorner")
+closeButtonUICorner.CornerRadius = UDim.new(0, 10)
+closeButtonUICorner.Parent = CloseButton
+CloseButton.MouseButton1Click:Connect(function()
+    ScreenGui:Destroy()
+end)
+
+-- Function to make the GUI draggable
+local UIS = game:GetService("UserInputService")
+local gui = MainFrame
+local dragging, dragInput, dragStart, startPos
+
+local function update(input)
+    local delta = input.Position - dragStart
+    gui.Position = UDim2.new(startPos.X.Scale, startPos.X.Offset + delta.X, startPos.Y.Scale, startPos.Y.Offset + delta.Y)
+end
+
+gui.InputBegan:Connect(function(input)
+    if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
+        dragging = true
+        dragStart = input.Position
+        startPos = gui.Position
+
+        input.Changed:Connect(function()
+            if input.UserInputState == Enum.UserInputState.End then
+                dragging = false
+            end
+        end)
+    end
+end)
+
+gui.InputChanged:Connect(function(input)
+    if input.UserInputType == Enum.UserInputType.MouseMovement or input.UserInputType == Enum.UserInputType.Touch then
+        dragInput = input
+    end
+end)
+
+UIS.InputChanged:Connect(function(input)
+    if input == dragInput and dragging then
+        update(input)
+    end
+end)
 
 print("PrisonSploit Loaded! :3")
 -- Copyright 2024, LM Productions
