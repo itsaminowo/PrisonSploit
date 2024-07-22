@@ -27,6 +27,7 @@ MainFrame.Size = UDim2.new(0, 320, 0, 600) -- Increased size to accommodate new 
 MainFrame.BorderSizePixel = 2
 MainFrame.BorderColor3 = Color3.fromRGB(255, 182, 193) -- Light Pink Border
 MainFrame.CanvasSize = UDim2.new(0, 0, 2, 0) -- Adjusted canvas size to fit content
+MainFrame.Draggable = true 
 MainFrame.ScrollBarThickness = 8
 
 -- UICorner for MainFrame
