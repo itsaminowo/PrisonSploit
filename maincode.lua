@@ -203,8 +203,8 @@ NoclipButton = createButton("NoclipButton", UDim2.new(0.5, -buttonWidth/2, 0, ve
     Title.TextColor3 = Color3.new(1, 0.714, 0.757)
     Title.FontSize = Enum.FontSize.Size32
     Title.TextSize = 30
-    Title.TextStrokeColor3 = Color3.new(0, 0, 0)
-    Title.TextStrokeTransparency = 1
+    Title.TextStrokeColor3 = Color3.new(1, 1, 1)
+    Title.TextStrokeTransparency = 0.5
 
     Toggle.Parent = BG
     Toggle.BackgroundColor3 = Color3.new(1, 0.412, 0.706)
@@ -298,11 +298,11 @@ end)
 -- Close Button
 CloseButton.Name = "CloseButton"
 CloseButton.Parent = MainFrame
-CloseButton.BackgroundColor3 = Color3.fromRGB(255, 69, 58) -- Red
+CloseButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255) -- White
 CloseButton.Size = UDim2.new(0, 80, 0, 40)
 CloseButton.Position = UDim2.new(0.5, -40, 1, -50)
 CloseButton.Text = "ⓧ"
-CloseButton.TextColor3 = Color3.fromRGB(255, 255, 255) -- White
+CloseButton.TextColor3 = Color3.fromRGB(255, 105, 180) -- Dark Pink
 CloseButton.TextScaled = true
 local closeButtonUICorner = Instance.new("UICorner")
 closeButtonUICorner.CornerRadius = UDim.new(0, 20)
