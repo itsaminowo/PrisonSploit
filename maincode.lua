@@ -317,9 +317,9 @@ end)
 -- Close Button Properties
 CloseButton.Name = "CloseButton"
 CloseButton.Parent = MainFrame
-CloseButton.BackgroundColor3 = Color3.fromRGB(255, 255, 2555) -- White
+CloseButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255) -- White
 CloseButton.Size = UDim2.new(0, 30, 0, 30)
-CloseButton.Position = UDim2.new(-10, -45, 0, 0)
+CloseButton.Position = UDim2.new(-5, -45, 0, 0)
 CloseButton.Text = "ⓧ"
 CloseButton.TextColor3 = Color3.fromRGB(255, 105, 180) -- Dark pink text color
 CloseButton.TextScaled = true
