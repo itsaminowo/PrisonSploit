@@ -72,7 +72,7 @@ local function createInputBox(name, position, placeholderText)
     inputBox.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
     inputBox.Size = UDim2.new(0, 280, 0, 30)
     inputBox.Position = position
-    inputBox.PlaceholderText = "Speed Value"
+    inputBox.PlaceholderText = placeholderText
     inputBox.PlaceholderColor3 = Color3.fromRGB(255, 182, 193) -- Light Pink Placeholder Text
     inputBox.TextColor3 = Color3.fromRGB(255, 105, 180) -- Dark Pink Text Color
     inputBox.TextScaled = true
