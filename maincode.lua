@@ -183,8 +183,9 @@ NoclipButton = createButton("NoclipButton", UDim2.new(0.5, -buttonWidth/2, 0, ve
 
     BG.Name = "BG"
     BG.Parent = Noclip
-    BG.BackgroundColor3 = Color3.new(255, 105, 180)
-    BG.BorderColor3 = Color3.new(255, 105, 180)
+    BG.BackgroundColor3 = Color3.new(1, 0.412, 0.706)
+    BG.BackgroundTransparency = 0.5 
+    BG.BorderColor3 = Color3.new(1, 1, 1)
     BG.BorderSizePixel = 2
     BG.Position = UDim2.new(0.149479166, 0, 0.82087779, 0)
     BG.Size = UDim2.new(0, 210, 0, 127)
@@ -207,7 +208,7 @@ NoclipButton = createButton("NoclipButton", UDim2.new(0.5, -buttonWidth/2, 0, ve
 
     Toggle.Parent = BG
     Toggle.BackgroundColor3 = Color3.new(1, 0.412, 0.706)
-    Toggle.BackgroundTransparency = 0.5
+   
     Toggle.BorderColor3 = Color3.new(1, 0.714, 0.757)
     Toggle.BorderSizePixel = 2
     Toggle.Position = UDim2.new(0.152380958, 0, 0.374192119, 0)
@@ -232,7 +233,7 @@ NoclipButton = createButton("NoclipButton", UDim2.new(0.5, -buttonWidth/2, 0, ve
     StatusPF.TextColor3 = Color3.new(1, 0.714, 0.757)
     StatusPF.TextSize = 20
     StatusPF.TextStrokeColor3 = Color3.new(0.333333, 0.333333, 0.333333)
-    StatusPF.TextStrokeTransparency = 0
+    StatusPF.TextStrokeTransparency = 1
     StatusPF.TextWrapped = false
 
     Status.Name = "Status"
@@ -244,7 +245,7 @@ NoclipButton = createButton("NoclipButton", UDim2.new(0.5, -buttonWidth/2, 0, ve
     Status.Font = Enum.Font.SourceSans
     Status.FontSize = Enum.FontSize.Size14
     Status.Text = "Off"
-    Status.TextColor3 = Color3.new(0.666667, 0, 0)
+    Status.TextColor3 = Color3.new(1, 0.412, 0.706)
     Status.TextScaled = true
     Status.TextSize = 14
     Status.TextStrokeColor3 = Color3.new(0.180392, 0, 0.431373)
@@ -260,7 +261,7 @@ NoclipButton = createButton("NoclipButton", UDim2.new(0.5, -buttonWidth/2, 0, ve
     Credit.Font = Enum.Font.SourceSans
     Credit.FontSize = Enum.FontSize.Size18
     Credit.Text = "Designed by LM Prod."
-    Credit.TextColor3 = Color3.new(1, 1 ,1)
+    Credit.TextColor3 = Color3.new(1, 0.714, 0.757)
     Credit.TextSize = 16
     Credit.TextStrokeColor3 = Color3.new(1, 0.412, 0.706)
     Credit.TextStrokeTransparency = 1
@@ -270,7 +271,7 @@ NoclipButton = createButton("NoclipButton", UDim2.new(0.5, -buttonWidth/2, 0, ve
         if Status.Text == "Off" then
             Clipon = true
             Status.Text = "On"
-            Status.TextColor3 = Color3.new(0,185,0)
+            Status.TextColor3 = Color3.new(255, 105, 180)
             Stepped = game:GetService("RunService").Stepped:Connect(function()
                 if Clipon then
                     for _, v in pairs(Workspace:GetChildren()) do
@@ -289,7 +290,7 @@ NoclipButton = createButton("NoclipButton", UDim2.new(0.5, -buttonWidth/2, 0, ve
         elseif Status.Text == "On" then
             Clipon = false
             Status.Text = "Off"
-            Status.TextColor3 = Color3.new(170,0,0)
+            Status.TextColor3 = Color3.new(255, 182, 193)
         end
     end)
 end)
