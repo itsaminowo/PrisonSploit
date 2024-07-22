@@ -28,7 +28,6 @@ MainFrame.BorderSizePixel = 2
 MainFrame.BorderColor3 = Color3.fromRGB(255, 182, 193) -- Light Pink Border
 MainFrame.CanvasSize = UDim2.new(0, 0, 2, 0) -- Adjusted canvas size to fit content
 MainFrame.ScrollBarThickness = 8
-MainFrame.Font = Enum.Font.SourceSans
 
 -- UICorner for MainFrame
 local mainFrameCorner = Instance.new("UICorner")
@@ -46,7 +45,6 @@ TitleLabel.TextColor3 = Color3.fromRGB(255, 105, 180) -- Dark Pink
 TitleLabel.TextScaled = true
 TitleLabel.TextStrokeColor3 = Color3.fromRGB(255, 255, 255) -- White text stroke
 TitleLabel.TextStrokeTransparency = 0.5
-TitleLabel.Font = Enum.Font.SourceSans
 
 -- Button Properties
 local function createButton(name, position, text, callback)
@@ -59,7 +57,6 @@ local function createButton(name, position, text, callback)
     button.Text = text
     button.TextColor3 = Color3.fromRGB(255, 255, 255) -- White text color
     button.TextScaled = true
-    button.Font = Enum.Font.SourceSans
     local buttonUICorner = Instance.new("UICorner")
     buttonUICorner.CornerRadius = UDim.new(0, 10)
     buttonUICorner.Parent = button
@@ -79,7 +76,7 @@ local function createInputBox(name, position, placeholderText)
     inputBox.PlaceholderColor3 = Color3.fromRGB(255, 182, 193) -- Light Pink Placeholder Text
     inputBox.TextColor3 = Color3.fromRGB(255, 105, 180) -- Dark Pink Text Color
     inputBox.TextScaled = true
-inputBox.Font = Enum.Font.SourceSans
+
     local inputBoxUICorner = Instance.new("UICorner")
     inputBoxUICorner.CornerRadius = UDim.new(0, 10)
     inputBoxUICorner.Parent = inputBox
