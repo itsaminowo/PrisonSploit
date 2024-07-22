@@ -28,10 +28,6 @@ MainFrame.BorderSizePixel = 2
 MainFrame.BorderColor3 = Color3.fromRGB(255, 182, 193) -- Light Pink Border
 MainFrame.CanvasSize = UDim2.new(0, 0, 2, 0) -- Adjusted canvas size to fit content
 MainFrame.ScrollBarThickness = 4
--- UICorner for MainFrame
-local mainFrameCorner = Instance.new("UICorner")
-mainFrameCorner.CornerRadius = UDim.new(0, 0)
-mainFrameCorner.Parent = MainFrame
 
 -- Title Label Properties
 TitleLabel.Name = "TitleLabel"
@@ -39,6 +35,7 @@ TitleLabel.Parent = MainFrame
 TitleLabel.BackgroundColor3 = Color3.fromRGB(255, 105, 180) -- Dark Pink
 TitleLabel.BackgroundTransparency = 0
 TitleLabel.BorderColor3 = Color3.fromRGB(255, 182, 193) -- Light Pink 
+TitleLabel.BorderSizePixel = 2
 TitleLabel.Size = UDim2.new(1, 0, 0, 41)
 TitleLabel.Position = UDim2.new(0, 0, 0, 0)
 TitleLabel.Text = "PrisonSploit :3"
@@ -53,14 +50,14 @@ local function createButton(name, position, text, callback)
     button.Name = name
     button.Parent = MainFrame
     button.BackgroundColor3 = Color3.fromRGB(255, 105, 180) -- Dark Pink
+    button.BorderColor3 = Color3.fromRGB(255, 182, 193)
+    button.BorderSizePixel = 2
     button.Size = UDim2.new(0, 280, 0, 30)
     button.Position = position
     button.Text = text
     button.TextColor3 = Color3.fromRGB(255, 255, 255) -- White text color
     button.TextScaled = true
-    local buttonUICorner = Instance.new("UICorner")
-    buttonUICorner.CornerRadius = UDim.new(0, 0)
-    buttonUICorner.Parent = button
+   
     button.MouseButton1Click:Connect(callback)
     return button
 end
@@ -71,6 +68,8 @@ local function createInputBox(name, position, placeholderText)
     inputBox.Name = name
     inputBox.Parent = MainFrame
     inputBox.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+    inputBox.BorderColor3 = Color3.fromRGB(255, 182, 193) -- Light Pink
+    inputBox.BorderSizePixel = 2
     inputBox.Size = UDim2.new(0, 280, 0, 30)
     inputBox.Position = position
     inputBox.PlaceholderText = placeholderText
@@ -186,7 +185,7 @@ NoclipButton = createButton("NoclipButton", UDim2.new(0.5, -buttonWidth/2, 0, ve
     BG.Parent = Noclip
     BG.BackgroundColor3 = Color3.new(1, 0.412, 0.706)
     BG.BackgroundTransparency = 0.5 
-    BG.BorderColor3 = Color3.new(1, 1, 1)
+    BG.BorderColor3 = Color3.new(1, 0.714, 0.757)
     BG.BorderSizePixel = 2
     BG.Position = UDim2.new(0.149479166, 0, 0.82087779, 0)
     BG.Size = UDim2.new(0, 210, 0, 127)
@@ -324,7 +323,7 @@ CloseButton.Text = "ⓧ"
 CloseButton.TextColor3 = Color3.fromRGB(255, 105, 180) -- Dark pink text color
 CloseButton.TextScaled = true
 local closeButtonUICorner = Instance.new("UICorner")
-closeButtonUICorner.CornerRadius = UDim.new(0, 10)
+closeButtonUICorner.CornerRadius = UDim.new(100, 100)
 closeButtonUICorner.Parent = CloseButton
 CloseButton.MouseButton1Click:Connect(function()
     ScreenGui:Destroy()
