@@ -28,8 +28,6 @@ MainFrame.BorderSizePixel = 2
 MainFrame.BorderColor3 = Color3.fromRGB(255, 182, 193) -- Light Pink Border
 MainFrame.CanvasSize = UDim2.new(0, 0, 2, 0) -- Adjusted canvas size to fit content
 MainFrame.ScrollBarThickness = 8
-MainFrame.Active = true
-MainFrame.Draggable = true
 
 -- UICorner for MainFrame
 local mainFrameCorner = Instance.new("UICorner")
@@ -74,7 +72,7 @@ local function createInputBox(name, position, placeholderText)
     inputBox.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
     inputBox.Size = UDim2.new(0, 280, 0, 30)
     inputBox.Position = position
-    inputBox.PlaceholderText = placeholderText
+    inputBox.PlaceholderText = "Speed Value"
     inputBox.PlaceholderColor3 = Color3.fromRGB(255, 182, 193) -- Light Pink Placeholder Text
     inputBox.TextColor3 = Color3.fromRGB(255, 105, 180) -- Dark Pink Text Color
     inputBox.TextScaled = true
