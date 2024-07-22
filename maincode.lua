@@ -204,7 +204,7 @@ NoclipButton = createButton("NoclipButton", UDim2.new(0.5, -buttonWidth/2, 0, ve
     Title.FontSize = Enum.FontSize.Size32
     Title.TextSize = 30
     Title.TextStrokeColor3 = Color3.new(0, 0, 0)
-    Title.TextStrokeTransparency = 0
+    Title.TextStrokeTransparency = 1
 
     Toggle.Parent = BG
     Toggle.BackgroundColor3 = Color3.new(1, 0.412, 0.706)
@@ -219,7 +219,7 @@ NoclipButton = createButton("NoclipButton", UDim2.new(0.5, -buttonWidth/2, 0, ve
     Toggle.TextColor3 = Color3.new(1, 1, 1)
     Toggle.TextSize = 25
     Toggle.TextStrokeColor3 = Color3.new(255,105,180)
-    Toggle.TextStrokeTransparency = 0
+    Toggle.TextStrokeTransparency = 1
 
     StatusPF.Name = "StatusPF"
     StatusPF.Parent = BG
@@ -245,7 +245,7 @@ NoclipButton = createButton("NoclipButton", UDim2.new(0.5, -buttonWidth/2, 0, ve
     Status.Font = Enum.Font.SourceSans
     Status.FontSize = Enum.FontSize.Size14
     Status.Text = "Off"
-    Status.TextColor3 = Color3.new(1, 0.412, 0.706)
+    Status.TextColor3 = Color3.new(255, 182, 193)
     Status.TextScaled = true
     Status.TextSize = 14
     Status.TextStrokeColor3 = Color3.new(0.180392, 0, 0.431373)
@@ -301,7 +301,7 @@ CloseButton.Parent = MainFrame
 CloseButton.BackgroundColor3 = Color3.fromRGB(255, 69, 58) -- Red
 CloseButton.Size = UDim2.new(0, 80, 0, 40)
 CloseButton.Position = UDim2.new(0.5, -40, 1, -50)
-CloseButton.Text = "Close"
+CloseButton.Text = "ⓧ"
 CloseButton.TextColor3 = Color3.fromRGB(255, 255, 255) -- White
 CloseButton.TextScaled = true
 local closeButtonUICorner = Instance.new("UICorner")
@@ -332,3 +332,4 @@ end)
 CloseButton.MouseButton1Click:Connect(function() ScreenGui:Destroy() end)
 
 print("PrisonSploit Loaded! :3")
+-- Copyright 2024, LM Productions
