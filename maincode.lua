@@ -159,10 +159,8 @@ ArrestAllButton = createButton("ArrestAllButton", UDim2.new(0.5, -buttonWidth/2,
 end)
 
 -- Remove Doors Button
-BetterBypasserButton = createButton("BetterBypasserButton", UDim2.new(0.5, -buttonWidth/2, 0, verticalPosition + 6*(buttonHeight + buttonSpacing)), "Load Better Bypasser", function()
+BetterBypasserButton = createButton("BetterBypasserButton", UDim2.new(0.5, -buttonWidth/2, 0, verticalPosition + 6*(buttonHeight + buttonSpacing)), "Load Better Bypasser", BetterBypasserButton.MouseButton1Click:Connect(function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Synergy-Networks/products/main/BetterBypasser/loader.lua",true))()
-        end
-    end
 end)
 
 -- Noclip Button
