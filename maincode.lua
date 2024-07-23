@@ -12,7 +12,7 @@ local CriminalsButton = Instance.new("TextButton")
 local GuardsButton = Instance.new("TextButton")
 local InmatesButton = Instance.new("TextButton")
 local ArrestAllButton = Instance.new("TextButton")
-local RemoveDoorsButton = Instance.new("TextButton")
+local BetterBypasserButton = Instance.new("TextButton")
 local NoclipButton = Instance.new("TextButton") -- New Noclip Button
 
 -- Properties
@@ -159,10 +159,8 @@ ArrestAllButton = createButton("ArrestAllButton", UDim2.new(0.5, -buttonWidth/2,
 end)
 
 -- Remove Doors Button
-RemoveDoorsButton = createButton("RemoveDoorsButton", UDim2.new(0.5, -buttonWidth/2, 0, verticalPosition + 6*(buttonHeight + buttonSpacing)), "Remove Doors", function()
-    for _, door in pairs(game:GetService("Workspace"):FindPartsInRegion3(workspace.CurrentCamera.CFrame:PointToWorldSpace(Vector3.new(0, 0, -50)), workspace.CurrentCamera.CFrame:PointToWorldSpace(Vector3.new(100, 100, 50)), nil)) do
-        if door.Name == "Door" then
-            door:Destroy()
+BetterBypasserButton = createButton("BetterBypasserButton", UDim2.new(0.5, -buttonWidth/2, 0, verticalPosition + 6*(buttonHeight + buttonSpacing)), "Load Better Bypasser", function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Synergy-Networks/products/main/BetterBypasser/loader.lua",true))()
         end
     end
 end)
