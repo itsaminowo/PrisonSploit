@@ -12,7 +12,6 @@ local CriminalsButton = Instance.new("TextButton")
 local GuardsButton = Instance.new("TextButton")
 local InmatesButton = Instance.new("TextButton")
 local ArrestAllButton = Instance.new("TextButton")
-local RemoveDoorsButton = Instance.new("TextButton")
 local NoclipButton = Instance.new("TextButton") -- New Noclip Button
 
 -- Properties
@@ -158,13 +157,8 @@ ArrestAllButton = createButton("ArrestAllButton", UDim2.new(0.5, -buttonWidth/2,
     end
 end)
 
--- Remove Doors Button
-RemoveDoorsButton = createButton("RemoveDoorsButton", UDim2.new(0.5, -buttonWidth/2, 0, verticalPosition + 6*(buttonHeight + buttonSpacing)), "Remove Doors", function()
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/Synergy-Networks/products/main/BetterBypasser/loader.lua",true))()
-end)
-
 -- Noclip Button
-NoclipButton = createButton("NoclipButton", UDim2.new(0.5, -buttonWidth/2, 0, verticalPosition + 7*(buttonHeight + buttonSpacing)), "Noclip Menu", function()
+NoclipButton = createButton("NoclipButton", UDim2.new(0.5, -buttonWidth/2, 0, verticalPosition + 6*(buttonHeight + buttonSpacing)), "Noclip Menu", function()
     local Workspace = game:GetService("Workspace")
     local CoreGui = game:GetService("CoreGui")
     local Players = game:GetService("Players")
@@ -295,6 +289,31 @@ NoclipButton = createButton("NoclipButton", UDim2.new(0.5, -buttonWidth/2, 0, ve
         end
     end)
 end)
+
+-- Define vertical position based on previous buttons
+verticalPosition = verticalPosition + 7*(buttonHeight + buttonSpacing)
+
+-- Better Bypasser Button
+local BetterBypasserButton = Instance.new("TextButton")
+BetterBypasserButton.Name = "BetterBypasserButton"
+BetterBypasserButton.Parent = MainFrame
+BetterBypasserButton.BackgroundColor3 = Color3.fromRGB(255, 105, 180) -- Dark Pink
+BetterBypasserButton.BorderColor3 = Color3.fromRGB(255, 182, 193) -- Light Pink Border
+BetterBypasserButton.BorderSizePixel = 2
+BetterBypasserButton.Size = UDim2.new(0, 280, 0, 30)
+BetterBypasserButton.Position = UDim2.new(0.5, -140, 0, verticalPosition) -- Position it below the last button
+BetterBypasserButton.Text = "Better Bypasser Menu"
+BetterBypasserButton.Font = Enum.Font.SourceSans
+BetterBypasserButton.FontSize = Enum.FontSize.Size28
+BetterBypasserButton.TextColor3 = Color3.fromRGB(255, 255, 255) -- White text color
+BetterBypasserButton.TextScaled = true
+
+BetterBypasserButton.MouseButton1Click:Connect(function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/Synergy-Networks/products/main/BetterBypasser/loader.lua", true))()
+end)
+
+-- Update vertical position for any future buttons
+verticalPosition = verticalPosition + buttonHeight + buttonSpacing
 
 -- Connect Slider and Button functionality
 SpeedSlider.FocusLost:Connect(function()
