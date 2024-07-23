@@ -265,7 +265,7 @@ NoclipButton = createButton("NoclipButton", UDim2.new(0.5, -buttonWidth/2, 0, ve
     Credit.Size = UDim2.new(0, 128, 0, 17)
     Credit.Font = Enum.Font.SourceSans
     Credit.FontSize = Enum.FontSize.Size18
-    Credit.Text = "Designed by LM Prod."
+    Credit.Text = "Scripted by LM Designs"
     Credit.TextColor3 = Color3.new(1, 0.714, 0.757)
     Credit.TextSize = 16
     Credit.TextStrokeColor3 = Color3.new(1, 0.412, 0.706)
@@ -371,4 +371,4 @@ UIS.InputChanged:Connect(function(input)
 end)
 
 print("PrisonSploit Loaded! :3")
--- Copyright 2024, LM Productions
+-- Copyright 2024, Loud Monkey Designs
