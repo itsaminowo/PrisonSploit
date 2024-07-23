@@ -30,39 +30,43 @@ local MainTab = Window:CreateTab("🏠 Home", nil) -- Title, Image
 local MainSection = MainTab:CreateSection("Main")
 
 Rayfield:Notify({
-   Title = "Function executed.",
-   Content = "The selected function has been executed.",
-   Duration = 3,
+   Title = "You executed the script",
+   Content = "Very cool gui",
+   Duration = 5,
    Image = 13047715178,
    Actions = { -- Notification Buttons
       Ignore = {
-         Name = "Okay.",
+         Name = "Okay!",
          Callback = function()
-         print("The player has acknowledged the function.")
+         print("The user tapped Okay!")
       end
    },
 },
 })
 
 local Button = MainTab:CreateButton({
-   Name = "Activate Kill Aura",
+   Name = "Infinite Jump Toggle",
    Callback = function()
-function()
-    if killAuraActive then return end
-    killAuraActive = true
-    killAuraConnection = game:GetService("RunService").Heartbeat:Connect(function()
-        for _, e in pairs(game.Players:GetChildren()) do
-            if e ~= game.Players.LocalPlayer then
-                local meleeEvent = game:GetService("ReplicatedStorage").meleeEvent
-                meleeEvent:FireServer(e)
-            end
-        end
-    end)
-end)
+       --Toggles the infinite jump between on or off on every script run
+_G.infinjump = not _G.infinjump
 
+if _G.infinJumpStarted == nil then
+	--Ensures this only runs once to save resources
+	_G.infinJumpStarted = true
 	
 	--Notifies readiness
-	game.StarterGui:SetCore("SendNotification", {Title="PrisonSploit"; Text="Kill aura activated."; Duration= 3
+	game.StarterGui:SetCore("SendNotification", {Title="Youtube Hub"; Text="Infinite Jump Activated!"; Duration=5;})
+
+	--The actual infinite jump
+	local plr = game:GetService('Players').LocalPlayer
+	local m = plr:GetMouse()
+	m.KeyDown:connect(function(k)
+		if _G.infinjump then
+			if k:byte() == 32 then
+			humanoid = game:GetService'Players'.LocalPlayer.Character:FindFirstChildOfClass('Humanoid')
+			humanoid:ChangeState('Jumping')
+			wait()
+			humanoid:ChangeState('Seated')
 			end
 		end
 	end)
@@ -107,7 +111,7 @@ local Dropdown = MainTab:CreateDropdown({
 
 local Input = MainTab:CreateInput({
    Name = "Walkspeed",
-   PlaceholderText = "1-9999",
+   PlaceholderText = "1-500",
    RemoveTextAfterFocusLost = true,
    Callback = function(Text)
         game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = (Text)
